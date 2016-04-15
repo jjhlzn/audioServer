@@ -26,7 +26,7 @@ working_directory "/home/jjh/audioServer" # available in 0.94.0+ ÔÚÕâÀïĞŞ¸ÄÎªÏîÄ
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "/var/tmp/.unicorn2.sock", :backlog => 64
-listen 19528, :tcp_nopush => true         #¶Ë¿ÚºÅ£¬NginXĞèÒªÓÃµ½´Ë¶Ë¿ÚºÅ
+listen 19540, :tcp_nopush => true         #¶Ë¿ÚºÅ£¬NginXĞèÒªÓÃµ½´Ë¶Ë¿ÚºÅ
  
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 120
