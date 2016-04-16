@@ -23,9 +23,9 @@ class AlbumController < ApplicationController
     respond_to do |format|
       format.json do 
         songs = []
-        songs.append({name: 'test', desc: 'des', date: '2016-01', url: 'songs/innocence.mp3'})
-        songs.append({name: 'test', desc: 'des', date: '2016-01', url: 'songs/houlai.mp3'})
-        songs.append({name: 'test', desc: 'des', date: '2016-01', url: 'songs/shouzhangxin.mp3'})
+        songs.append({name: 'innocence', desc: 'des', date: '2016-01', url: 'songs/innocence.mp3'})
+        songs.append({name: '后来', desc: 'des', date: '2016-01', url: 'songs/houlai.mp3'})
+        songs.append({name: '手掌心', desc: 'des', date: '2016-01', url: 'songs/shouzhangxin.mp3'})
         songs.append({name: 'test', desc: 'des', date: '2016-01', url: 'songs/test.mp3'})
         
         render json: {status: 0, errorMessage: '', songs: songs}
