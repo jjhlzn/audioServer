@@ -18,3 +18,4 @@
 
 #ignore songs in public
 /public/songs/
+*.pid
