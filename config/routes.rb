@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'albums' => 'album#index'
   get 'album/:id/songs' => 'album#getSongs'
   get 'song/:id/comments' => 'song#getComments'
+  
+  post 'comments' => 'comment#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
