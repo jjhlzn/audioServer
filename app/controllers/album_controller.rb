@@ -22,7 +22,7 @@ class AlbumController < ApplicationController
                         count: 50, listenCount: '150万'}) 
          albums.append({name: '三国', author: '谢涛', id: 7, image: 'images/sanguo.jpg', 
                         count: 90, listenCount: '18万'}) 
-         render json: {status: 0, errorMessage: '', albums: albums} 
+         render json: {status: 0, errorMessage: '', totalNumber: 20, albums: albums} 
        end
     end
   end

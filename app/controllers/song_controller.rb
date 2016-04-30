@@ -9,8 +9,9 @@ class SongController < ApplicationController
         comments.append({id: 1, userId: '一片雪', time: '10小时前', content: '第2行：1.这是一个新舞台，从来没有过的形式，又是以推动原创力量为口号的选秀。所以年轻的观众们开始沸腾了，任何一点清醒的批判都会被视为不合时宜的冷水。'})
         comments.append({id: 1, userId: '闲事半两 ”', time: '5分钟前', content: '第3行：本人天生乐盲，所以只论歌词，不对曲调做任何评价。'})
         comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '第4行：这片子让我想起《夜幕低垂》，原本想会不会是一个导演，回来一查，不是。里面的音乐，和一直穿插其中的光，还有一些气氛吧，给人的感觉都有点像。 另外还有一点点想到死神来了。'})
-        comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '第5行：yrdy'})
-        render json: {status: 0, errorMessage: '', comments: comments}
+        comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '第5行：简单一点'})
+        comments.append({id: 1, userId: 'jjh', time: '1小时前', content: '第5行：test'})
+        render json: {status: 0, errorMessage: '', totalNumber: 20, comments: comments}
       end
     end
   
