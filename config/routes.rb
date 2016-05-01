@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   get 'albums' => 'album#index'
-  get 'album/:id/songs' => 'album#getSongs'
-  get 'song/:id/comments' => 'song#getComments'
+  get 'album/songs' => 'album#getSongs'
+  get 'song/comments' => 'song#getComments'
   
+  get 'comments' => 'comment#create'
   post 'comments' => 'comment#create'
 
   # Example of regular route:
