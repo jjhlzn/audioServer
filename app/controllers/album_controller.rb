@@ -1,4 +1,4 @@
-require 'YAML'
+require 'yaml'
 
 class AlbumController < ApplicationController
   skip_before_filter :verify_authenticity_token
