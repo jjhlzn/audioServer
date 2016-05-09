@@ -3,7 +3,7 @@ require 'yaml'
 class AlbumController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def index 
-    type = params[:type]
+    type = params[:request][:type]
     if type == "common" 
       albums = get_common_albums()
       totalNumber = 20
@@ -20,7 +20,7 @@ class AlbumController < ApplicationController
   def getSongs
 
     #print(id.length)
-    id = YAML.load(params[:album])['id']
+    id = YAML.load(params[:request][:album])['id']
     if (id >= 1000) 
       songs = songs_live()
     elsif (id >= 100) 
