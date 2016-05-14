@@ -56,11 +56,11 @@ class AlbumController < ApplicationController
   
   def get_common_albums
     albums = [] 
-    albums.append({name: '艾薇儿的歌', author: 'Avril Lavigne', type: 'Common',  id: 8, image: 'images/avril.jpg',
+    albums.append({name: '艾薇儿的歌', author: 'Avril Lavigne', type: 'Common',  id: 8, image: 'images/default.jpg',
                    count: 50, listenCount: '1000万'}) 
     albums.append({name: '袁腾飞讲历史精选集', author: '袁腾飞', type: 'Common',id: 0, image: 'images/yuantengfei.jpg',
                    count: 32, listenCount: '10万'}) 
-    albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'images/jiushirang.jpeg', 
+    albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'images/default.jpeg', 
                    count: 10, listenCount: '19万'}) 
     albums.append({name: '腾飞说春秋战国', author: '袁腾飞',type: 'Common', id: 2, image: 'images/shuochuqiuzhanguo.jpg', 
                    count: 10, listenCount: '1000万'})
@@ -104,7 +104,8 @@ class AlbumController < ApplicationController
   
   def songs_live
     songs = []
-    songs.append({name: 'Wish You Were Here', desc: 'des', date: '2016-01', url: 'http://114.215.171.93:88/broadwave.m3u?src=p&rate=1'})
+    
+    songs.append({name: 'Wish You Were Here', desc: 'des', date: '2016-01', url: 'http://114.215.171.93:1935/live/myStream/playlist.m3u8'})
     return songs
   end
 end
