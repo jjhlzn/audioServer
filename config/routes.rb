@@ -13,6 +13,15 @@ Rails.application.routes.draw do
   
   get 'comments' => 'comment#create'
   post 'comments' => 'comment#create'
+  
+  get 'user/login' => 'user#login'
+  post 'user/login' => 'user#login'
+  get 'user/getPhoneCheckCode' => 'user#getPhoneCheckCode'
+  post 'user/getPhoneCheckCode' => 'user#getPhoneCheckCode'
+  get 'user/signup' => 'user#signup'
+  post 'user/signup' => 'user#signup'
+  get 'user/getPassword' => 'user#getPassword'
+  post 'user/getPassword' => 'user#getPassword'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
