@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get 'song/comments' => 'song#getComments'
   post 'song/comments' => 'song#getComments'
   
-  get 'comments' => 'comment#create'
-  post 'comments' => 'comment#create'
+  get 'comment/add' => 'comment#create'
+  post 'comment/add' => 'comment#create'
   
   get 'user/login' => 'user#login'
   post 'user/login' => 'user#login'
