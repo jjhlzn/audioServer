@@ -81,32 +81,48 @@ class AlbumController < ApplicationController
   
   def songs_common
     songs = []
-    songs.append({name: 'Wish You Were Here', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
-    songs.append({name: 'innocence', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
-    songs.append({name: 'Everybody Hurts', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
-    songs.append({name: 'Fly', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Fly.mp3'})
-    songs.append({name: 'Girlfriend', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Girlfriend.mp3'})
-    songs.append({name: "I'm With You", desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Im_With_You.mp3'})
-    songs.append({name: 'My Happy Ending', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/My_Happy_Ending.mp3'})
-    songs.append({name: 'Sk8er Boi', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Sk8er_Boi.mp3'})
-    songs.append({name: 'What The Hell', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/What_The_Hell.mp3'})
-    songs.append({name: "When You're Gone", desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/When_Youre_Gone.mp3'})
+    songs.append({id: "1", name: 'Wish You Were Here', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
+    songs.append({id: "2",name: 'innocence', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
+    songs.append({id: "3",name: 'Everybody Hurts', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
+    songs.append({id: "4",name: 'Fly', desc: 'des', date: '2016-01', 
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Fly.mp3'})
+    songs.append({id: "5",name: 'Girlfriend', desc: 'des', date: '2016-01', 
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Girlfriend.mp3'})
+    songs.append({id: "6",name: "I'm With You", desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Im_With_You.mp3'})
+    songs.append({id: "7",name: 'My Happy Ending', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/My_Happy_Ending.mp3'})
+    songs.append({id: "9",name: 'Sk8er Boi', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Sk8er_Boi.mp3'})
+    songs.append({id: "10",name: 'What The Hell', desc: 'des', date: '2016-01',
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/What_The_Hell.mp3'})
+    songs.append({id: "11",name: "When You're Gone", desc: 'des', date: '2016-01', 
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/When_Youre_Gone.mp3'})
     return songs
   end
   
   def songs_vip
     songs = []
-    songs.append({name: 'Wish You Were Here', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
-    songs.append({name: 'innocence', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
-    songs.append({name: 'Everybody Hurts', desc: 'des', date: '2016-01', url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
+    songs.append({id: "500",name: 'Wish You Were Here', desc: 'des', date: '2016-01', 
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
+    songs.append({id: "501",name: 'innocence', desc: 'des', date: '2016-01', 
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
+    songs.append({id: "502",name: 'Everybody Hurts', desc: 'des', date: '2016-01', 
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
     return songs
   end
   
   def songs_live
     songs = []
     
-    songs.append({name: 'Ruby编程', desc: 'des', date: '2016-01',image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
+    songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01',
+      startTime: '2016-05-19 13:00:00', endTime: '2016-05-19 17:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
         url: 'http://114.215.171.93:1935/live/myStream/playlist.m3u8'})
+    
     return songs
   end
 end
