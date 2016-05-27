@@ -1,8 +1,6 @@
 class SongController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def getComments 
-    respond_to do |format|
-      format.json do
         comments = []
         comments.append({id: 1, userId: '那是当然', time: '1小时前', content: '第0行：真的让人感到这档节目还是值得关注的，是从张岭开始的。'})
         comments.append({id: 1, userId: 'frozenmoon', time: '1天前', content: '第1行：本来想写140字的，但是发现完全不够。不够表达，甚至不够郑重。 新年伊始，真高兴就有了这么接地气的节目。 《中国好歌曲》看的我特别爽。这么多选秀节目，在选手介绍自己的时候我们快进，因为所有台词都老套，不管真假都没有人愿意了解.'})
@@ -12,10 +10,10 @@ class SongController < ApplicationController
         comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '第5行：简单一点'})
         comments.append({id: 1, userId: 'jjh', time: '1小时前', content: '第5行：test'})
         render json: {status: 0, errorMessage: '', totalNumber: 20, comments: comments}
-      end
-    end
-  
-  
+
   end
   
+  def getLiveListenerCount
+    render json: {status: 0, errorMessage: '', count: 120}
+  end
 end

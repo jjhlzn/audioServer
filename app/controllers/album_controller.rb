@@ -82,36 +82,46 @@ class AlbumController < ApplicationController
   def songs_common
     songs = []
     songs.append({id: "1", name: 'Wish You Were Here', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "2",name: 'innocence', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "3",name: 'Everybody Hurts', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "4",name: 'Fly', desc: 'des', date: '2016-01', 
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Fly.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Fly.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "5",name: 'Girlfriend', desc: 'des', date: '2016-01', 
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Girlfriend.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Girlfriend.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "6",name: "I'm With You", desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Im_With_You.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Im_With_You.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "7",name: 'My Happy Ending', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/My_Happy_Ending.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/My_Happy_Ending.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "9",name: 'Sk8er Boi', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Sk8er_Boi.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Sk8er_Boi.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "10",name: 'What The Hell', desc: 'des', date: '2016-01',
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/What_The_Hell.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/What_The_Hell.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     songs.append({id: "11",name: "When You're Gone", desc: 'des', date: '2016-01', 
-       url: 'http://jjhaudio.hengdianworld.com/songs/avril/When_Youre_Gone.mp3'})
+       url: 'http://jjhaudio.hengdianworld.com/songs/avril/When_Youre_Gone.mp3', settings: {maxCommentWord: 20, canComment: true}})
+       
     return songs
   end
   
   def songs_vip
     songs = []
     songs.append({id: "500",name: 'Wish You Were Here', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3'})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', settings: {maxCommentWord: 20, canComment: true}})
     songs.append({id: "501",name: 'innocence', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3'})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', settings: {maxCommentWord: 10, canComment: true}})
     songs.append({id: "502",name: 'Everybody Hurts', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3'})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3', settings: {maxCommentWord: 5, canComment: false}})
     return songs
   end
   
@@ -121,7 +131,7 @@ class AlbumController < ApplicationController
     songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01',
       startTime: '2016-05-19 13:00:00', endTime: '2016-05-19 17:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
         image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
-        url: 'http://114.215.171.93:1935/live/myStream/playlist.m3u8'})
+        url: 'http://114.215.171.93:1935/live/myStream/playlist.m3u8', settings: {maxCommentWord: 20, canComment: true}})
     
     return songs
   end
