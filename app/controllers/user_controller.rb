@@ -16,4 +16,12 @@ class UserController < ApplicationController
   def getPassword
     render json: {status: 0, errorMessage: ''}
   end
+  
+  def resetPassword
+    render json: {status: 0, errorMessage: ''}
+  end
+  
+  def getClientNumber 
+    render json: {status: 0, errorMessage: '', peopleCount: 120}
+  end
 end

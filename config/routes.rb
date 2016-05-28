@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   post 'user/signup' => 'user#signup'
   get 'user/getPassword' => 'user#getPassword'
   post 'user/getPassword' => 'user#getPassword'
+  get 'user/resetPassword' => 'user#resetPassword'
+  post 'user/resetPassword' => 'user#resetPassword'
+  get 'user/getClientNumber' => 'user#getClientNumber'
+  post 'user/getClientNumber' => 'user#getClientNumber'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
