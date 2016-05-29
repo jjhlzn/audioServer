@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'albums' => 'album#index'
   get 'album/songs' => 'album#getSongs'
   post 'album/songs' => 'album#getSongs'
+  get 'album/search' => 'album#search'
+  post 'album/search' => 'album#search'
   
   get 'song/comments' => 'song#getComments'
   post 'song/comments' => 'song#getComments'

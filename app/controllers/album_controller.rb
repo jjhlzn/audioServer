@@ -32,6 +32,26 @@ class AlbumController < ApplicationController
     render json: {status: 0, errorMessage: '', songs: songs}
   end
   
+  def search 
+      albums = [] 
+      albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'http://jjhaudio.hengdianworld.com/images/default.png', 
+                     count: 10, listenCount: '19万'}) 
+      albums.append({name: '三国', author: '谢涛',type: 'Common', id: 7, image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
+                                    count: 90, listenCount: '18万'}) 
+      albums.append({name: '腾飞说春秋战国', author: '袁腾飞',type: 'Common', id: 2, image: 'http://jjhaudio.hengdianworld.com/images/shuochuqiuzhanguo.jpg', 
+                     count: 10, listenCount: '1000万'})
+      albums.append({name: '文景之治', author: '未知', id: 3,type: 'Common', image: 'http://jjhaudio.hengdianworld.com/images/wenjinzhizhi.jpg', 
+                     count: 10, listenCount: '1000'}) 
+      albums.append({name: '一千零一夜', author: '梁文道',type: 'Common', id: 4, image: 'http://jjhaudio.hengdianworld.com/images/yiqianlinyiye.jpg', 
+                     count: 10, listenCount: '123万'}) 
+      albums.append({name: '罗辑思维', author: '罗振宇',type: 'Common', id: 5, image: 'http://jjhaudio.hengdianworld.com/images/luojisiwei.jpg', 
+                     count: 100, listenCount: '150万'}) 
+      albums.append({name: '无法言喻', author: '徐薇',type: 'Common', id: 6, image: 'http://jjhaudio.hengdianworld.com/images/wufayanyu.jpg', 
+                     count: 50, listenCount: '150万'}) 
+      render json: {status: 0, errorMessage: '', totalNumber: 15, albums: albums} 
+    
+  end
+  
   
   private 
   def get_live_albums 
