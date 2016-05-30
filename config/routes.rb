@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   get 'song/comments' => 'song#getComments'
   post 'song/comments' => 'song#getComments'
+  get 'song/livecomments' => 'song#getLiveComments'
+  post 'song/livecomments' => 'song#getLiveComments'
   get 'song/livelistener' => 'song#getLiveListenerCount'
   post 'song/livelistener' => 'song#getLiveListenerCount'
   

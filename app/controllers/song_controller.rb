@@ -13,6 +13,19 @@ class SongController < ApplicationController
 
   end
   
+  def getLiveComments 
+        comments = []
+        comments.append({id: 1, userId: '那是当然', time: '1小时前', content: '11111'})
+        comments.append({id: 1, userId: 'frozenmoon', time: '1天前', content: '222'})
+        comments.append({id: 1, userId: '一片雪', time: '10小时前', content: '3333'})
+        comments.append({id: 1, userId: '闲事半两 ”', time: '5分钟前', content: '444'})
+        comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '555'})
+        comments.append({id: 1, userId: '凌紫冥', time: '1小时前', content: '666'})
+        comments.append({id: 1, userId: 'jjh', time: '1小时前', content: '88888'})
+        render json: {status: 0, errorMessage: '', totalNumber: 20, comments: comments}
+
+  end
+  
   def getLiveListenerCount
     render json: {status: 0, errorMessage: '', count: 120}
   end
