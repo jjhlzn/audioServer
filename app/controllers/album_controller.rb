@@ -19,8 +19,9 @@ class AlbumController < ApplicationController
   
   def getSongs
 
-    #print(id.length)
-    id = YAML.load(params[:request][:album])['id']
+    
+    id = (params[:request][:album][:id]).to_i
+    print("id = #{id}")
     if (id >= 1000) 
       songs = songs_live()
     elsif (id >= 100) 

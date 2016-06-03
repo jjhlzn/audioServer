@@ -10,6 +10,7 @@ class UserController < ApplicationController
   end
 
   def signup 
+    print(params)
     render json: {status: 0, errorMessage: ''}
   end
   
