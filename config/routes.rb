@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post 'album/songs' => 'album#getSongs'
   get 'album/search' => 'album#search'
   post 'album/search' => 'album#search'
+  post 'album/getHotSearchWords' => 'album#getHotSearchWords'
+  get 'album/getHotSearchWords' => 'album#getHotSearchWords'
   
   get 'song/comments' => 'song#getComments'
   post 'song/comments' => 'song#getComments'

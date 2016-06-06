@@ -53,6 +53,10 @@ class AlbumController < ApplicationController
     
   end
   
+  def getHotSearchWords 
+     render json: {status: 0, errorMessage: '', keywords: ["信用卡", "提高额度", "办卡"]} 
+  end
+  
   
   private 
   def get_live_albums 
