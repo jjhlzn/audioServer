@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   
   get 'user/login' => 'user#login'
   post 'user/login' => 'user#login'
+  get 'user/logout' => 'user#logout'
+  post 'user/logout' => 'user#logout'
   get 'user/getPhoneCheckCode' => 'user#getPhoneCheckCode'
   post 'user/getPhoneCheckCode' => 'user#getPhoneCheckCode'
   get 'user/signup' => 'user#signup'

@@ -4,10 +4,10 @@ class AlbumController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def index 
     type = params[:request][:type]
-    if type == "common" 
+    if type == "Common" 
       albums = get_common_albums()
       totalNumber = 20
-    elsif type == "vip"
+    elsif type == "Vip"
       albums = get_vip_albums()
       totalNumber = 3
     else 

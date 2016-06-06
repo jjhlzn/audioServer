@@ -4,6 +4,10 @@ class UserController < ApplicationController
     render json: {status: 0, errorMessage: '', name: 'test', token: 'fsdfsdfsfdsfsf'}
   end
   
+  def logout
+    render json: {status: 0, errorMessage: ''}
+  end
+  
   
   def getPhoneCheckCode
     render json: {status: 0, errorMessage: ''}
