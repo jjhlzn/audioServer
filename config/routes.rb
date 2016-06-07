@@ -37,7 +37,12 @@ Rails.application.routes.draw do
   post 'user/resetPassword' => 'user#resetPassword'
   get 'user/getClientNumber' => 'user#getClientNumber'
   post 'user/getClientNumber' => 'user#getClientNumber'
-
+  
+  
+  get 'app/checkUpgrade' => 'app#checkUpgrade'
+  post 'app/checkUpgrade' => 'app#checkUpgrade'
+  get 'app/registerDevice' => 'app#registerDevice'
+  post 'app/registerDevice' => 'app#registerDevice'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -8,6 +8,8 @@ class AlbumController < ApplicationController
       albums = get_common_albums()
       totalNumber = 20
     elsif type == "Vip"
+      render json: {status: -10, errorMessage: '你不是VIP会员', totalNumber: totalNumber, albums: []} 
+      return
       albums = get_vip_albums()
       totalNumber = 3
     else 
