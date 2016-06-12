@@ -32,25 +32,25 @@ class AlbumController < ApplicationController
       songs = songs_common()
     end
     
-    render json: {status: 0, errorMessage: '', songs: songs}
+    render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
   end
   
   def search 
       albums = [] 
       albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'http://jjhaudio.hengdianworld.com/images/default.png', 
-                     count: 10, listenCount: '19万'}) 
+                     count: 10, listenCount: '19万', desc: 'test'}) 
       albums.append({name: '三国', author: '谢涛',type: 'Common', id: 7, image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-                                    count: 90, listenCount: '18万'}) 
+                                    count: 90, listenCount: '18万', desc: 'test'}) 
       albums.append({name: '腾飞说春秋战国', author: '袁腾飞',type: 'Common', id: 2, image: 'http://jjhaudio.hengdianworld.com/images/shuochuqiuzhanguo.jpg', 
-                     count: 10, listenCount: '1000万'})
+                     count: 10, listenCount: '1000万', desc: 'test'})
       albums.append({name: '文景之治', author: '未知', id: 3,type: 'Common', image: 'http://jjhaudio.hengdianworld.com/images/wenjinzhizhi.jpg', 
-                     count: 10, listenCount: '1000'}) 
+                     count: 10, listenCount: '1000', desc: 'test'}) 
       albums.append({name: '一千零一夜', author: '梁文道',type: 'Common', id: 4, image: 'http://jjhaudio.hengdianworld.com/images/yiqianlinyiye.jpg', 
-                     count: 10, listenCount: '123万'}) 
+                     count: 10, listenCount: '123万', desc: 'test'}) 
       albums.append({name: '罗辑思维', author: '罗振宇',type: 'Common', id: 5, image: 'http://jjhaudio.hengdianworld.com/images/luojisiwei.jpg', 
-                     count: 100, listenCount: '150万'}) 
+                     count: 100, listenCount: '150万', desc: 'test'}) 
       albums.append({name: '无法言喻', author: '徐薇',type: 'Common', id: 6, image: 'http://jjhaudio.hengdianworld.com/images/wufayanyu.jpg', 
-                     count: 50, listenCount: '150万'}) 
+                     count: 50, listenCount: '150万', desc: 'test'}) 
       render json: {status: 0, errorMessage: '', totalNumber: 15, albums: albums} 
     
   end
@@ -64,43 +64,43 @@ class AlbumController < ApplicationController
   def get_live_albums 
     albums = [] 
     albums.append({name: 'Dota直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '1000万'}) 
+                   count: 50, listenCount: '1000万', desc: '企业无成本融资！'}) 
     albums.append({name: 'War3直播', author: '袁腾飞', type: 'Live', id: 1001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10万'}) 
+                   count: 32, listenCount: '10万', desc: 'test'}) 
     return albums
   end
   
   def get_vip_albums 
     albums = [] 
     albums.append({name: 'Ruby编程', author: 'Avril Lavigne', type: 'Vip',  id: 100, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '1000万'}) 
+                   count: 50, listenCount: '1000万', desc: 'test'}) 
     albums.append({name: 'C#编程', author: '袁腾飞', type: 'Vip',  id: 101, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10万'}) 
+                   count: 32, listenCount: '10万', desc: 'test'}) 
     albums.append({name: '架构设计', author: '久石让', type: 'Vip',  id: 102, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
-                  count: 32, listenCount: '10万'}) 
+                  count: 32, listenCount: '10万', desc: 'test'}) 
     return albums
   end
   
   def get_common_albums
     albums = [] 
     albums.append({name: '艾薇儿的歌', author: 'Avril Lavigne', type: 'Common',  id: 8, image: 'http://jjhaudio.hengdianworld.com/images/default.png',
-                   count: 50, listenCount: '1000万'}) 
+                   count: 50, listenCount: '1000万', desc: 'test'}) 
     albums.append({name: '袁腾飞讲历史精选集', author: '袁腾飞', type: 'Common',id: 0, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10万'}) 
+                   count: 32, listenCount: '10万', desc: 'test'}) 
     albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'http://jjhaudio.hengdianworld.com/images/default.png', 
-                   count: 10, listenCount: '19万'}) 
+                   count: 10, listenCount: '19万', desc: 'test'}) 
     albums.append({name: '腾飞说春秋战国', author: '袁腾飞',type: 'Common', id: 2, image: 'http://jjhaudio.hengdianworld.com/images/shuochuqiuzhanguo.jpg', 
-                   count: 10, listenCount: '1000万'})
+                   count: 10, listenCount: '1000万', desc: 'test'})
     albums.append({name: '文景之治', author: '未知', id: 3,type: 'Common', image: 'http://jjhaudio.hengdianworld.com/images/wenjinzhizhi.jpg', 
-                   count: 10, listenCount: '1000'}) 
+                   count: 10, listenCount: '1000', desc: 'test'}) 
     albums.append({name: '一千零一夜', author: '梁文道',type: 'Common', id: 4, image: 'http://jjhaudio.hengdianworld.com/images/yiqianlinyiye.jpg', 
-                   count: 10, listenCount: '123万'}) 
+                   count: 10, listenCount: '123万', desc: 'test'}) 
     albums.append({name: '罗辑思维', author: '罗振宇',type: 'Common', id: 5, image: 'http://jjhaudio.hengdianworld.com/images/luojisiwei.jpg', 
-                   count: 100, listenCount: '150万'}) 
+                   count: 100, listenCount: '150万', desc: 'test'}) 
     albums.append({name: '无法言喻', author: '徐薇',type: 'Common', id: 6, image: 'http://jjhaudio.hengdianworld.com/images/wufayanyu.jpg', 
-                   count: 50, listenCount: '150万'}) 
+                   count: 50, listenCount: '150万', desc: 'test'}) 
     albums.append({name: '三国', author: '谢涛',type: 'Common', id: 7, image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-                   count: 90, listenCount: '18万'}) 
+                   count: 90, listenCount: '18万', desc: 'test'}) 
     return albums
   end
   
@@ -157,7 +157,7 @@ class AlbumController < ApplicationController
     
     songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01',
       startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
-        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'playing', 
+        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', settings: {maxCommentWord: 20, canComment: true}})
         
     songs.append({id: "1001", name: '房间2', desc: 'des', date: '2016-01',
