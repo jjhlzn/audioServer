@@ -27,6 +27,6 @@ class SongController < ApplicationController
   end
   
   def getLiveListenerCount
-    render json: {status: 0, errorMessage: '', count: 120}
+    render json: {status: 0, errorMessage: '', listerCount: 120}
   end
 end

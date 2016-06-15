@@ -32,7 +32,11 @@ class AlbumController < ApplicationController
       songs = songs_common()
     end
     
-    render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
+    if params[:request][:test] == "resend"
+      render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
+    else
+      render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
+    end
   end
   
   def search 

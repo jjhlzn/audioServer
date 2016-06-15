@@ -23,8 +23,13 @@ Rails.application.routes.draw do
   get 'comment/add' => 'comment#create'
   post 'comment/add' => 'comment#create'
   
+  get 'comment/addLive' => 'comment#addLive'
+  post 'comment/addLive' => 'comment#addLive'
+  
   get 'user/login' => 'user#login'
   post 'user/login' => 'user#login'
+  get 'user/updatetoken' => 'user#updateToken'
+  post 'user/updatetoken' => 'user#updateToken'
   get 'user/logout' => 'user#logout'
   post 'user/logout' => 'user#logout'
   get 'user/getPhoneCheckCode' => 'user#getPhoneCheckCode'
