@@ -12,8 +12,8 @@ class AppController < ApplicationController
   
   def getAds
     ads = []
-    ads.append({imageUrl: "http://image.tianjimedia.com/uploadImages/2015/129/56/J63MI042Z4P8.jpg", clickUrl: "http://www.baidu.com", title: "信用卡活动"})
-    ads.append({imageUrl: "http://pic.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg", clickUrl: "http://www.baidu.com", title: "刷卡活动"})
+    ads.append({imageUrl: "http://114.215.236.171:6012/upload/201606/13/201606131653198157.jpg", clickUrl: "http://www.baidu.com", title: "信用卡活动"})
+    ads.append({imageUrl: "http://114.215.236.171:6012/upload/201606/13/201606131653245913.jpg", clickUrl: "http://www.baidu.com", title: "刷卡活动"})
     render json: {status: 0, errorMessage: '', ads: ads}
   end
   
