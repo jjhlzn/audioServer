@@ -2,7 +2,7 @@ class SongController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def getComments 
         comments = []
-        comments.append({id: 1, userId: '那是当然', time: '1小时前', content: '第0行：:smile: 真的让人感到这档节目还是值得关注的，是从张岭开始的。'})
+        comments.append({id: 1, userId: '那是当然', time: '1小时前', content: 'smile,:v::clap::thumbsup::cherries::hibiscus::sunny::pineapple::lollipop::smile::laughing::kissing_smiling_eyes::strawberry::heart_eyes:这个靠谱'})
         comments.append({id: 1, userId: 'frozenmoon', time: '1天前', content: '第1行：本来想写140字的，但是发现完全不够。'})
         comments.append({id: 1, userId: '一片雪', time: '10小时前', content: '第2行：1.这是一个新舞台，从来没有过的形式，又是以推动原创力量为口号的选秀。所以年轻的观众们开始沸腾了，任何一点清醒的批判都会被视为不合时宜的冷水。'})
         comments.append({id: 1, userId: '闲事半两 ', time: '5分钟前', content: '第3行：本人天生乐盲，所以只论歌词，不对曲调做任何评价。'})

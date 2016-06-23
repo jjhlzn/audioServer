@@ -68,20 +68,20 @@ class AlbumController < ApplicationController
   def get_live_albums 
     albums = [] 
     albums.append({name: 'Dota直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '1000万', desc: '企业无成本融资！'}) 
+                   count: 50, listenCount: '2000人', desc: '企业无成本融资！'}) 
     albums.append({name: 'War3直播', author: '袁腾飞', type: 'Live', id: 1001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10万', desc: 'test'}) 
+                   count: 32, listenCount: '10人', desc: 'test'}) 
     return albums
   end
   
   def get_vip_albums 
     albums = [] 
     albums.append({name: 'Ruby编程', author: 'Avril Lavigne', type: 'Vip',  id: 100, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '1000万', desc: 'test'}) 
+                   count: 50, listenCount: '10000人', desc: 'test'}) 
     albums.append({name: 'C#编程', author: '袁腾飞', type: 'Vip',  id: 101, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10万', desc: 'test'}) 
+                   count: 32, listenCount: '990人', desc: 'test'}) 
     albums.append({name: '架构设计', author: '久石让', type: 'Vip',  id: 102, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
-                  count: 32, listenCount: '10万', desc: 'test'}) 
+                  count: 32, listenCount: '878人', desc: 'test'}) 
     return albums
   end
   
@@ -148,11 +148,11 @@ class AlbumController < ApplicationController
   def songs_vip
     songs = []
     songs.append({id: "500",name: 'Wish You Were Here', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', settings: {maxCommentWord: 20, canComment: true}})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', listenPeople: "120人"， settings: {maxCommentWord: 20, canComment: true}})
     songs.append({id: "501",name: 'innocence', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', settings: {maxCommentWord: 10, canComment: true}})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', listenPeople: "125人"，settings: {maxCommentWord: 10, canComment: true}})
     songs.append({id: "502",name: 'Everybody Hurts', desc: 'des', date: '2016-01', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3', settings: {maxCommentWord: 5, canComment: false}})
+      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3',listenPeople: "1200人"， settings: {maxCommentWord: 5, canComment: false}})
     return songs
   end
   
@@ -162,12 +162,12 @@ class AlbumController < ApplicationController
     songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01',
       startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
         image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
-        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', settings: {maxCommentWord: 20, canComment: true}})
+        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人"， settings: {maxCommentWord: 20, canComment: true}})
         
     songs.append({id: "1001", name: '房间2', desc: 'des', date: '2016-01',
-          startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+          startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00',listenPeople: "120人"， totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
-            url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8', settings: {maxCommentWord: 20, canComment: true}})
+            url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人"， settings: {maxCommentWord: 20, canComment: true}})
         
         
     
