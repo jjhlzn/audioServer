@@ -44,8 +44,16 @@ Rails.application.routes.draw do
   post 'user/getClientNumber' => 'user#getClientNumber'
   get 'user/setName' => 'user#setName'
   post 'user/setName' => 'user#setName'
+  get 'user/setnickname' => 'user#setNickName'
+  post 'user/setnickname' => 'user#setNickName'
   get 'user/setSex' => 'user#setSex'
   post 'user/setSex' => 'user#setSex'
+  get 'user/uploadprofileimage' => 'user#uploadProfileImage'
+  post 'user/uploadprofileimage' => 'user#uploadProfileImage'
+  get 'user/getprofileimage' => 'user#getProfileImage'
+  post 'user/getprofileimage' => 'user#getProfileImage'
+  get 'user/getstatdata' => 'user#getStatData'
+  post 'user/getstatdata' => 'user#getStatData'
   
   
   get 'app/checkUpgrade' => 'app#checkUpgrade'
