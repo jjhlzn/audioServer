@@ -165,7 +165,7 @@ class AlbumController < ApplicationController
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
         
     songs.append({id: "1001", name: '房间2', desc: 'des', date: '2016-01',
-          startTime: '2016-07-04 08:30:00', endTime: '2016-07-04 11:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+          startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
             url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人",settings: {maxCommentWord: 20, canComment: true}})
         
