@@ -35,7 +35,7 @@ class AlbumController < ApplicationController
     if params[:request][:test] == "resend"
       render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
     else
-      render json: {status: 0, errorMessage: '', totalNumber: songs.length, songs: songs}
+      render json: {status: -10, errorMessage: '', totalNumber: songs.length, songs: songs}
     end
   end
   

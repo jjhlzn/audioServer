@@ -7,7 +7,8 @@ class UserController < ApplicationController
   end
   
   def updateToken
-    render json: {status: 0, errorMessage: '', name: 'test', sex: '男', token: 'fsdfsdfsfdsfsf', 
+    render json: {status: 0, errorMessage: '', name: '张三', nickname: 'jjh', level: 'VIP等级',
+      boss: '李四', sex: '男', token: 'fsdfsdfsfdsfsf', 
       codeImageUrl: 'http://img.weiphone.net/1/h061/h23/bc9c8fe1img201606071030220_306__220.jpg'}
   end
   
