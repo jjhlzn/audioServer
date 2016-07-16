@@ -62,7 +62,7 @@ class UserController < ApplicationController
 
   def getStatData
     render json: {status: 0, errorMessage: '', jifen: '99880', chaifu: '10000', teamPeople: '120人',
-     tuijianPeople: '25人', orderCount: '16笔'，name: '张三', nickname: 'jjh', level: 'VIP等级',
+     tuijianPeople: '25人', orderCount: '16笔',name: '张三', nickname: 'jjh', level: 'VIP等级',
       boss: '李四', sex: '男'}
   end
 end
