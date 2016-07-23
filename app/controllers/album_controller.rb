@@ -148,10 +148,16 @@ class AlbumController < ApplicationController
   def songs_vip
     songs = []
     songs.append({id: "500",name: 'Wish You Were Here', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
+    hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', listenPeople: "120人", settings: {maxCommentWord: 20, canComment: true}})
     songs.append({id: "501",name: 'innocence', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
       url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', listenPeople: "125人",settings: {maxCommentWord: 10, canComment: true}})
     songs.append({id: "502",name: 'Everybody Hurts', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
+    hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
       url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3',listenPeople: "1200人",settings: {maxCommentWord: 5, canComment: false}})
     return songs
   end
@@ -162,11 +168,17 @@ class AlbumController < ApplicationController
     songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg',
       startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
         image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
+        hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
         
     songs.append({id: "1001", name: '房间2', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg',
           startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
+            hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
             url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人",settings: {maxCommentWord: 20, canComment: true}})
         
         
