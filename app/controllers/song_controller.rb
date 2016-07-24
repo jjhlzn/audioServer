@@ -31,7 +31,7 @@ class SongController < ApplicationController
   end
 
   def getSongInfo 
-    render json: {status: 0, errorMessage: '',  song: { id: "1001", name: '房间2', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg',
+    render json: {status: 0, errorMessage: '',  song: { id: "1001", name: '房间2', desc: 'des', date: '2016-01', 
           startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
             hasAdvImage: true,
