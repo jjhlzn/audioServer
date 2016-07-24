@@ -35,7 +35,7 @@ class SongController < ApplicationController
           startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
             hasAdvImage: true,
-                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advImageUrl: "http://114.215.236.171:6012/upload/201606/13/201606131653198157.jpg",
                        advUrl: "http://www.baidu.com",
             url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人",settings: {maxCommentWord: 20, canComment: true}}}
   end
