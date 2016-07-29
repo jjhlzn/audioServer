@@ -65,6 +65,8 @@ Rails.application.routes.draw do
   post 'app/registerDevice' => 'app#registerDevice'
   get 'app/getAds' => 'app#getAds'
   post 'app/getAds' => 'app#getAds'
+  get 'app/getparameterinfo' => 'app#getParameterInfo'
+  post 'app/getparameterinfo' => 'app#getParameterInfo'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
