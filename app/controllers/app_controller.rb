@@ -18,7 +18,7 @@ class AppController < ApplicationController
   end
 
   def getParameterInfo 
-    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: '2012'}]}
+    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: '201290099'}]}
   end
   
 end
