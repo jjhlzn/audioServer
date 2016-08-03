@@ -11,7 +11,7 @@ from email.mime.text import MIMEText
 
 import sys
 
-HOST = "114.215.236.171:6012"
+HOST = "115.29.199.187:8888"
 
 def send_request():
     conn = httplib.HTTPConnection(HOST)
