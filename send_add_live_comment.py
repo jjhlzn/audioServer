@@ -49,7 +49,7 @@ def main():
 		sleep(5)
 
 threads = []
-for i in range(400):
+for i in range(300):
     t1 = threading.Thread(target=main)
     threads.append(t1)
 	
