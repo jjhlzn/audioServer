@@ -1,8 +1,8 @@
 class AppController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def checkUpgrade
-    render json: {status: 0, errorMessage: '', newestVersion: '', isNeedUpgrade: false, upgradeType: 'optional', 
-          upgradeUrl: 'http://www.baidu.com'}
+    render json: {status: 0, errorMessage: '', newestVersion: '', isNeedUpgrade: false, upgradeType: 'force', upgradeFileUrl: '',
+          upgradeUrl: 'http://apk.r1.market.hiapk.com/data/upload/apkres/2016/8_2/14/com.chinaideal.bkclient.tabmain_024203.apk'}
   end
   
   def registerDevice
@@ -18,7 +18,15 @@ class AppController < ApplicationController
   end
 
   def getParameterInfo 
-    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: '201290099'}]}
+    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: '201290099'},
+    {keyword: 'vipdescription', value: ''},
+    {keyword: 'beforedescription', value: ''}]}
+  end
+
+  def buyvip 
+    respond_to do |format|
+      format.html 
+    end
   end
   
 end
