@@ -69,6 +69,8 @@ Rails.application.routes.draw do
   post 'app/getparameterinfo' => 'app#getParameterInfo'
   get 'app/buyvip' => 'app#buyvip'
   post 'app/buyvip' => 'app#buyvip'
+    get 'app/wechatpay' => 'app#wechatpay'
+  post 'app/wechatpay' => 'app#wechatpay'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

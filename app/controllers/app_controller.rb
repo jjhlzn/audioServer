@@ -12,20 +12,28 @@ class AppController < ApplicationController
   
   def getAds
     ads = []
-    ads.append({imageUrl: "http://114.215.236.171:6012/upload/201606/13/201606131653198157.jpg", clickUrl: "http://www.baidu.com", title: "信用卡活动"})
-    ads.append({imageUrl: "http://114.215.236.171:6012/upload/201606/13/201606131653245913.jpg", clickUrl: "http://www.baidu.com", title: "刷卡活动"})
+    ads.append({imageUrl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", clickUrl: "http://www.baidu.com", title: "信用卡活动"})
+    ads.append({imageUrl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", clickUrl: "http://www.qq.com", title: "刷卡活动"})
     render json: {status: 0, errorMessage: '', ads: ads}
   end
 
   def getParameterInfo 
-    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: '201290099'},
+    render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: ''},
     {keyword: 'vipdescription', value: ''},
-    {keyword: 'beforedescription', value: ''}]}
+    {keyword: 'liveCourseName', value: '直播课程'},
+    {keyword: 'payCourseName', value: '付费课程'},
+    {keyword: 'beforedescription', value: 'xxxx'}]}
   end
 
   def buyvip 
     respond_to do |format|
       format.html 
+    end
+  end
+
+  def wechatpay
+    respond_to do |format|
+      format.html
     end
   end
   

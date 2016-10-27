@@ -8,10 +8,8 @@ class AlbumController < ApplicationController
       albums = get_common_albums()
       totalNumber = 20
     elsif type == "Vip"
-      render json: {status: -10, errorMessage: '你不是VIP会员', totalNumber: totalNumber, albums: []} 
-      return
       albums = get_vip_albums()
-      totalNumber = 3
+      totalNumber = 2
     else 
       albums = get_live_albums()
       totalNumber = 2
@@ -28,6 +26,8 @@ class AlbumController < ApplicationController
       songs = songs_live()
     elsif (id >= 100) 
       songs = songs_vip()
+      render json: {status: -10, errorMessage: '你没有权限访问该课程', totalNumber: 0, songs: []}
+      return
     else 
       songs = songs_common()
     end
@@ -67,21 +67,26 @@ class AlbumController < ApplicationController
   private 
   def get_live_albums 
     albums = [] 
-    albums.append({name: 'Dota直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '2000人', desc: '企业无成本融资！'}) 
-    albums.append({name: 'War3直播', author: '袁腾飞', type: 'Live', id: 1001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '10人', desc: 'test'}) 
+    albums.append({name: 'Dota直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                   count: 50, listenCount: '2000人', desc: '企业无成本融资！', playing: true, isReady: true}) 
+
+    albums.append({name: 'War3直播', author: '袁腾飞', type: 'Live', id: 1001, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                   count: 32, listenCount: '10人', desc: 'test',playing: false, isReady: false}) 
+
+
+    albums.append({name: '视频直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                   count: 50, listenCount: '2000人', desc: '企业无成本融资！', playing: true, isReady: true}) 
     return albums
   end
   
   def get_vip_albums 
     albums = [] 
     albums.append({name: 'Ruby编程', author: 'Avril Lavigne', type: 'Vip',  id: 100, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
-                   count: 50, listenCount: '10000人', desc: 'test'}) 
+                   count: 50, listenCount: '10000人', desc: 'test', playing: true, isReady: true}) 
     albums.append({name: 'C#编程', author: '袁腾飞', type: 'Vip',  id: 101, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
-                   count: 32, listenCount: '990人', desc: 'test'}) 
+                   count: 32, listenCount: '990人', desc: 'test', playing: true, isReady: true}) 
     albums.append({name: '架构设计', author: '久石让', type: 'Vip',  id: 102, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
-                  count: 32, listenCount: '878人', desc: 'test'}) 
+                  count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true}) 
     return albums
   end
   
@@ -147,41 +152,67 @@ class AlbumController < ApplicationController
   
   def songs_vip
     songs = []
-    songs.append({id: "500",name: 'Wish You Were Here', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-    hasAdvImage: true,
-                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
-                       advUrl: "http://www.baidu.com",
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Wish_You_Were_Here.mp3', listenPeople: "120人", settings: {maxCommentWord: 20, canComment: true}})
-    songs.append({id: "501",name: 'innocence', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/innocence.mp3', listenPeople: "125人",settings: {maxCommentWord: 10, canComment: true}})
-    songs.append({id: "502",name: 'Everybody Hurts', desc: 'des', date: '2016-01', image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-    hasAdvImage: true,
-                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
-                       advUrl: "http://www.baidu.com",
-      url: 'http://jjhaudio.hengdianworld.com/songs/avril/Everybody_Hurts.mp3',listenPeople: "1200人",settings: {maxCommentWord: 5, canComment: false}})
-    return songs
-  end
-  
-  def songs_live
-    songs = []
-    
     songs.append({id: "1000", name: '房间1', desc: 'des', date: '2016-01', 
       startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
         image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
         hasAdvImage: true,
                        advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
                        advUrl: "http://www.baidu.com",
+        advScrollRate: 5,
+        type: 'audio',
+        advText: "",
+        advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: ''},
+                    {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: ''}],
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
-        
+
+
     songs.append({id: "1001", name: '房间2', desc: 'des', date: '2016-01', 
-          startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
-            image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
-            hasAdvImage: false,
+      startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
+        hasAdvImage: true,
                        advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
                        advUrl: "http://www.baidu.com",
-            url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人",settings: {maxCommentWord: 20, canComment: true}})
+        advScrollRate: 5,
+        type: 'audio',
+        advText: "",
+        advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: ''},
+                    {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: ''}],
+        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
+    return songs
+  end
+  
+  def songs_live
+    songs = []
+    
+    songs.append({id: "1000", name: '房间1（音频）', desc: 'des', date: '2016-01', 
+      startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
+        hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
+        advScrollRate: 5,
+        playing: true,
+        type: 'audio',
+        advText: "",
+        advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: 'aaa'},
+                    {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: 'bbb'}],
+        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
         
+
         
+    songs.append({id: "1001", name: '房间2（视频）', desc: 'des', date: '2016-01', 
+      startTime: '2016-06-10 09:00:00', endTime: '2016-06-10 13:00:00', totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
+        image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png', status: 'end', 
+        hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
+        advScrollRate: 5,
+        playing: true,
+        type: 'video',
+        advText: "",
+        advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: 'aaa'},
+                    {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: 'bbb'}],
+        url: 'http://devimages.apple.com/samplecode/adDemo/ad.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
     
     return songs
   end

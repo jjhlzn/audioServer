@@ -34,9 +34,14 @@ class SongController < ApplicationController
     render json: {status: 0, errorMessage: '',  song: { id: "1001", name: '房间2', desc: 'des', date: '2016-01', 
           startTime: '2016-07-04 14:30:00', endTime: '2016-07-04 18:00:00',listenPeople: "120人",totalTime: 0.5 * 60 * 60, leftTime: 0.25 * 60 * 60,
             image: 'http://jjhaudio.hengdianworld.com/images/liveSampleImage.png',
-            hasAdvImage: true,
+            playing: true,
+            hasAdvImage: false,
                        advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
                        advUrl: "http://www.baidu.com",
+            advText: "这是广告内容",
+            advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: 'aaa'},
+                    {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: 'bbb'}],
+            advScrollRate: 5,
             url: 'http://114.215.171.93:1935/live/myStream2/playlist.m3u8',listenPeople: "1000人",settings: {maxCommentWord: 20, canComment: true}}}
   end
 end
