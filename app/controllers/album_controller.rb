@@ -10,6 +10,9 @@ class AlbumController < ApplicationController
     elsif type == "Vip"
       albums = get_vip_albums()
       totalNumber = 2
+    elsif type == "Live_Vip"
+      albums = get_common_and_vip_albums()
+      totalNumber = albums.length
     else 
       albums = get_live_albums()
       totalNumber = 2
@@ -89,6 +92,33 @@ class AlbumController < ApplicationController
                   count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true}) 
     return albums
   end
+
+  def get_common_and_vip_albums 
+    albums = [] 
+    albums.append({name: 'Dota直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                  count: 50, listenCount: '2000人', desc: '企业无成本融资！', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+    albums.append({name: 'War3直播', author: '袁腾飞', type: 'Live', id: 1001, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                   count: 32, listenCount: '10人', desc: 'test',playing: false, isReady: false, playTimeDesc: ''}) 
+    albums.append({name: '视频直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                   count: 50, listenCount: '2000人', desc: '企业无成本融资！', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+    albums.append({name: '视频直播', author: 'jjh', type: 'Live', id: 1000, image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+    count: 50, listenCount: '2000人', desc: '企业无成本融资！', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+
+
+    albums.append({name: 'Ruby编程', author: 'Avril Lavigne', type: 'Vip',  id: 100, image: 'http://jjhaudio.hengdianworld.com/images/avril.jpg',
+                   count: 50, listenCount: '10000人', desc: 'test', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+    albums.append({name: 'C#编程', author: '袁腾飞', type: 'Vip',  id: 101, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
+                   count: 32, listenCount: '990人', desc: 'test', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+    albums.append({name: '架构设计', author: '久石让', type: 'Vip',  id: 102, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
+                  count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true, playTimeDesc: ''}) 
+
+
+    albums.append({name: '代理培训课程1', author: '袁腾飞', type: 'Agent',  id: 10001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
+                   count: 32, listenCount: '990人', desc: 'test', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
+    albums.append({name: '代理培训课程2', author: '久石让', type: 'Agent',  id: 10002, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
+                  count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true, playTimeDesc: ''}) 
+    return albums
+  end
   
   def get_common_albums
     albums = [] 
@@ -161,6 +191,8 @@ class AlbumController < ApplicationController
         advScrollRate: 5,
         type: 'audio',
         advText: "",
+        shareTitle: "title",
+        shareUrl: "http://www.sina.com.cn",
         advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: ''},
                     {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: ''}],
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
@@ -175,6 +207,8 @@ class AlbumController < ApplicationController
         advScrollRate: 5,
         type: 'audio',
         advText: "",
+        shareTitle: "title",
+        shareUrl: "http://www.sina.com.cn",
         advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: ''},
                     {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: ''}],
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
@@ -193,7 +227,9 @@ class AlbumController < ApplicationController
         advScrollRate: 5,
         playing: true,
         type: 'audio',
-        advText: "",
+        advText: "这是一段广告文本 1232323232323232444444 哦哦婆婆jjj ",
+        shareTitle: "title",
+        shareUrl: "http://www.sina.com.cn",
         advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: 'aaa'},
                     {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: 'bbb'}],
         url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
@@ -210,6 +246,8 @@ class AlbumController < ApplicationController
         playing: true,
         type: 'video',
         advText: "",
+        shareTitle: "title1",
+        shareUrl: "http://www.baidu.com",
         advImages: [{imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", link: 'http://www.baidu.com', title: 'aaa'},
                     {imageurl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", link: 'http://www.qq.com', title: 'bbb'}],
         url: 'http://devimages.apple.com/samplecode/adDemo/ad.m3u8', listenPeople: "1200人", settings: {maxCommentWord: 20, canComment: true}})
