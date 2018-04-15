@@ -17,6 +17,22 @@ class AppController < ApplicationController
     render json: {status: 0, errorMessage: '', ads: ads}
   end
 
+  def getMainPageAds
+    ads = []
+    ads.append({imageUrl: "http://jf.yhkamani.com/upload/201606/13/201606131653198157.jpg", clickUrl: "http://www.baidu.com", title: "信用卡活动"})
+    ads.append({imageUrl: "http://jf.yhkamani.com/upload/201606/13/201606131653245913.jpg", clickUrl: "http://www.qq.com", title: "刷卡活动"})
+    render json: {status: 0, errorMessage: '', ads: ads}
+  end
+
+  def getToutiao
+    render json: {status: 0, errorMessage: '', result: {
+      content: "111111",
+      clickUrl: "http://www.baidu.com",
+      title: "头条"
+    }}
+  end
+
+
   def getParameterInfo 
     render json: {status: 0, errorMessage: '', result: [{keyword: 'livedescription', value: ''},
     {keyword: 'vipdescription', value: ''},
@@ -81,7 +97,7 @@ class AppController < ApplicationController
         {
           imageUrl: 'http://pic69.nipic.com/file/20150614/20677594_124458962000_2.jpg',
           title: '标题2',
-          url: ''
+          url: 'http://www.baidu.com'
         },
         {
           imageUrl: 'http://pic36.nipic.com/20131128/11748057_141932278338_2.jpg',
@@ -102,15 +118,83 @@ class AppController < ApplicationController
       status: 0,
       errorMessage: '',
       result: [ 
-        {code: 'f_car',   isShow: true, message: 1},
-        {code: 'f_class', isShow: true, message: 1}, 
-        {code: 'f_user',  isShow: true, message: 0},
-        {code: 'f_more',  isShow: true, message: 0},
-        {code: 'f_loan', isShow: false, message: 1}, 
-        {code: 'f_chongzhi', isShow: false, message: 1},
+        {code: 'f_car',   isShow: true, message: 1, name: '汽车分期10', imageUrl: 'http://localhost:5000/images/f_car1.png'},
+        {code: 'f_class', isShow: true, message: 1, name: '直播课程2', imageUrl: 'http://localhost:5000/images/f_live1.png'}, 
+        {code: 'f_user',  isShow: true, message: 1, name: '客服1', imageUrl:    'http://localhost:5000/images/f_live1.png'},
+        {code: 'f_more',  isShow: true, message: 0, name: '更多1', imageUrl: 'http://localhost:5000/images/f_live1.png'},
+        {code: 'f_loan', isShow: true, message: 1, name: '快速贷款1', imageUrl: 'http://localhost:5000/images/f_live1.png'}, 
+        {code: 'f_chongzhi', isShow: false, message: 1, name: '我要充值1', imageUrl: 'http://localhost:5000/images/f_live1.png'},
       ]
     }
   end
+    
+
+  def GetLaunchAdv
+    render json: {
+      status: 0,
+      errorMessage: '',
+      result: {
+        imageUrl: 'http://192.168.31.175:5000/images/adv.jpg',
+        advUrl: '',
+        advTitle: '测试'
+      }
+    }
+  end
+
+  def GetSearchWords 
+    render json: {
+      status: 0,
+      errorMessage: '',
+      keywords: [
+        '经济', 
+        '股票',
+        '财务',
+        '比特币',
+        '工作人员',
+        '中国共产党',
+        '人民币'
+      ]
+    }
+  end
+
+
+  def Search 
+    render json: {
+      status: 0,
+      errorMessage: '',
+      totalNumber: 15,
+      results: [
+        {
+          "title": "11111111",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": "",
+          
+        },
+        {
+          "title": "2222222",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": "",
+
+        },
+        {
+          "title": "33333",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": "",
+
+        }
+      ]
+    }
+  end
+  
 
   def buyvip 
     respond_to do |format|

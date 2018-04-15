@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   post 'song/livelistener' => 'song#getLiveListenerCount'
   get 'song/getsonginfo' => 'song#getSongInfo'
   post 'song/getsonginfo' => 'song#getSongInfo'
+
+  get 'getTuijianCourses' => 'album#getTuijianCourses'
+  post 'getTuijianCourses' => 'album#getTuijianCourses'
   
   
   get 'comment/add' => 'comment#create'
@@ -64,6 +67,8 @@ Rails.application.routes.draw do
   get 'app/registerDevice' => 'app#registerDevice'
   post 'app/registerDevice' => 'app#registerDevice'
   get 'app/getAds' => 'app#getAds'
+  get 'app/getMainPageAds' => 'app#getMainPageAds'
+  post 'app/getMainPageAds' => 'app#getMainPageAds'
   post 'app/getAds' => 'app#getAds'
   get 'app/getparameterinfo' => 'app#getParameterInfo'
   post 'app/getparameterinfo' => 'app#getParameterInfo'
@@ -83,6 +88,13 @@ Rails.application.routes.draw do
   post 'app/getfunctioninfos' => 'app#GetFunctionsInfos'
   get 'app/getcoursenotify' => 'app#getCourseNotify'
   post 'app/getcoursenotify' => 'app#getCourseNotify'
+  get 'app/getlaunchadv' => 'app#GetLaunchAdv'
+  post 'app/getlaunchadv' => 'app#GetLaunchAdv'
+
+  get 'app/getToutiao' => 'app#getToutiao'
+  post 'app/getToutiao' => 'app#getToutiao'
+  get 'app/getSearchWords' => 'app#getSearchWords'
+  post 'app/getSearchWords' => 'app#getSearchWords'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

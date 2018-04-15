@@ -43,27 +43,113 @@ class AlbumController < ApplicationController
   end
   
   def search 
-      albums = [] 
-      albums.append({name: '久石让の唯美纯音乐', author: '久石让', type: 'Common', id: 1, image: 'http://jjhaudio.hengdianworld.com/images/default.png', 
-                     count: 10, listenCount: '19万', desc: 'test'}) 
-      albums.append({name: '三国', author: '谢涛',type: 'Common', id: 7, image: 'http://jjhaudio.hengdianworld.com/images/sanguo.jpg', 
-                                    count: 90, listenCount: '18万', desc: 'test'}) 
-      albums.append({name: '腾飞说春秋战国', author: '袁腾飞',type: 'Common', id: 2, image: 'http://jjhaudio.hengdianworld.com/images/shuochuqiuzhanguo.jpg', 
-                     count: 10, listenCount: '1000万', desc: 'test'})
-      albums.append({name: '文景之治', author: '未知', id: 3,type: 'Common', image: 'http://jjhaudio.hengdianworld.com/images/wenjinzhizhi.jpg', 
-                     count: 10, listenCount: '1000', desc: 'test'}) 
-      albums.append({name: '一千零一夜', author: '梁文道',type: 'Common', id: 4, image: 'http://jjhaudio.hengdianworld.com/images/yiqianlinyiye.jpg', 
-                     count: 10, listenCount: '123万', desc: 'test'}) 
-      albums.append({name: '罗辑思维', author: '罗振宇',type: 'Common', id: 5, image: 'http://jjhaudio.hengdianworld.com/images/luojisiwei.jpg', 
-                     count: 100, listenCount: '150万', desc: 'test'}) 
-      albums.append({name: '无法言喻', author: '徐薇',type: 'Common', id: 6, image: 'http://jjhaudio.hengdianworld.com/images/wufayanyu.jpg', 
-                     count: 50, listenCount: '150万', desc: 'test'}) 
-      render json: {status: 0, errorMessage: '', totalNumber: 15, albums: albums} 
+    render json: {
+      status: 0,
+      errorMessage: '',
+      totalNumber: 15,
+      results: [
+        {
+          "title": "11111111",
+          "content": "1111111",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": ""
+        },
+        {
+          "title": "2222222",
+          "content": "1111111",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": ""
+        },
+        {
+          "title": "33333",
+          "content": "1111111",
+          "clickUrl": "http://www.baidu.com",
+          "image": "http://upyun.pokermate.net/site/cn/imgs/mtt/p_mtt2.png",
+          "date": "2018-04-02",
+          "author": "金军航",
+          "desc": ""
+        }
+      ]
+    }
     
   end
   
   def getHotSearchWords 
-     render json: {status: 0, errorMessage: '', keywords: ["信用卡", "提高额度", "办卡"]} 
+     render json: {status: 0, errorMessage: '', keywords: ['经济', 
+      '股票',
+      '财务',
+      '比特币',
+      '工作人员',
+      '共产党',
+      '人民币']} 
+  end
+
+  def getTuijianCourses
+    songs = []
+    songs.append({
+        id: "1000", 
+        name: '房间1', 
+        desc: 'des', 
+        date: '2018/03/28', 
+        image: 'https://img1.360buyimg.com/pop/jfs/t19762/218/1506265792/160394/c371efd1/5acca241Nf205da79.jpg', 
+        stars: 4.5,
+        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', 
+        status: "正在直播",
+        listenerCount: 111111,
+        liveTime: "03/08 20:00"
+        })
+
+
+        songs.append({
+          id: "1000", 
+          name: '房间2', 
+          desc: 'des', 
+          date: '2018/03/28', 
+          image: 'https://img1.360buyimg.com/pop/jfs/t19762/218/1506265792/160394/c371efd1/5acca241Nf205da79.jpg', 
+          stars: 4.5,
+          url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', 
+          status: "正在直播",
+          listenerCount: 111111,
+          liveTime: "03/08 20:00"
+          })
+    render json: {status: 0, errorMessage: '', courses: songs} 
+  end
+
+  def getCourses
+    songs = []
+    songs.append({
+        id: "1000", 
+        name: '房间1', 
+        desc: 'des', 
+        date: '2018/03/28', 
+        image: 'https://img1.360buyimg.com/pop/jfs/t19762/218/1506265792/160394/c371efd1/5acca241Nf205da79.jpg', 
+        stars: 4.5,
+        url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', 
+        status: "正在直播",
+        listenerCount: 111111,
+        liveTime: "03/08 20:00"
+        })
+
+
+        songs.append({
+          id: "1000", 
+          name: '房间2', 
+          desc: 'des', 
+          date: '2018/03/28', 
+          image: 'https://img1.360buyimg.com/pop/jfs/t19762/218/1506265792/160394/c371efd1/5acca241Nf205da79.jpg', 
+          stars: 4.5,
+          url: 'http://114.215.171.93:1935/vod/mp4:sample.mp4/playlist.m3u8', 
+          status: "未开始",
+          listenerCount: 0,
+          liveTime: "03/08 20:00"
+          })
+    render json: {status: 0, errorMessage: '', courses: songs} 
   end
   
   
@@ -113,9 +199,9 @@ class AlbumController < ApplicationController
                   count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true, playTimeDesc: ''}) 
 
 
-    albums.append({name: '代理培训课程1', author: '袁腾飞', type: 'Agent',  id: 10001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
+    albums.append({name: '代理培训课程1', author: '袁腾飞', type: 'Vip', isAgent: true, id: 10001, image: 'http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg',
                    count: 32, listenCount: '990人', desc: 'test', playing: true, isReady: true, playTimeDesc: '27日晚上7点开奖'}) 
-    albums.append({name: '代理培训课程2', author: '久石让', type: 'Agent',  id: 10002, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
+    albums.append({name: '代理培训课程2', author: '久石让', type: 'Vip', isAgent: true,   id: 10002, image: 'http://jjhaudio.hengdianworld.com/images/jiushirang.jpeg',
                   count: 32, listenCount: '878人', desc: 'test', playing: true, isReady: true, playTimeDesc: ''}) 
     return albums
   end
@@ -254,4 +340,9 @@ class AlbumController < ApplicationController
     
     return songs
   end
+
+
+
+
+
 end
